@@ -66,9 +66,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+
                     LazyColumn(modifier = Modifier.fillMaxSize()){
                         //items(arrNews) { news -> GenericCell(item = news) }
-                        items(arrNews) { news -> FilterCell() }
+                        items(arrNews) { new -> FilterCell() }
                     }
 
                 }
@@ -107,9 +108,11 @@ fun GenericCell(item: ModelExample) {
 @Preview
 @Composable
 fun InfoView() {
+
    Column(modifier = Modifier
        .height(42.dp)
        .background(Color.White)) {
+
        Row(verticalAlignment = Alignment.CenterVertically,
            modifier = Modifier.fillMaxSize()
            ){
@@ -121,7 +124,6 @@ fun InfoView() {
                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium, fontSize = 14.sp)
            )
        }
-
    }
 }
 
@@ -130,15 +132,21 @@ fun InfoView() {
 @Composable
 fun GenericCell() {
     Column(modifier = Modifier.height(88.dp).background(Color.White)) {
+
         Row(verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.fillMaxSize(),) {
+            modifier = Modifier.fillMaxSize()) {
+
             Image(painter = painterResource(id = R.mipmap.ta_bien), contentDescription = "",
                 modifier = Modifier
                     .width(56.dp)
-                    .height(56.dp))
-            Column(modifier = Modifier.fillMaxHeight()) {
+                    .height(56.dp)
+                    .padding(start = 16.dp))
+
+            Column(modifier = Modifier.padding(start = 4.dp),
+                verticalArrangement = Arrangement.Top) {
+
                 Text(text = "Titulo Noticia",
-                    modifier = Modifier.padding(top = 16.dp, start = 16.dp),
+                    modifier = Modifier.padding(top = 0.dp, start = 16.dp),
                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold,
                         fontSize = 14.sp))
                 Text(text = "Subtitulo Noticia",
@@ -163,10 +171,11 @@ fun FilterCell() {
     Column(modifier = Modifier
         .height(56.dp)
         .background(Color.White)) {
+
         Row(verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier
-                .fillMaxSize(),
+            modifier = Modifier.fillMaxSize(),
             horizontalArrangement = Arrangement.SpaceBetween) {
+
             Text(
                 text = "(Categoria)",
                 textAlign = Center,
