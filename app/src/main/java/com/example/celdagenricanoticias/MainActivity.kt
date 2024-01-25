@@ -186,7 +186,7 @@ fun FilterCell() {
 
 @Preview
 @Composable
-fun footerTVInfo() {
+fun FooterTVInfo() {
     Column(modifier = Modifier
         .height(60.dp)
         .background(Color.White)) {
