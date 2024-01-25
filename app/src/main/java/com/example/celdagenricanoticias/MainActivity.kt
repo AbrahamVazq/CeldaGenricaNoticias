@@ -152,7 +152,7 @@ fun GenericCell(item: ModelExample) {
 fun FilterCell() {
     //var isChecked by remember { mutableStateOf(true) }
     var isChecked = true
-    Column(modifier = Modsifier.height(56.dp)) {
+    Column(modifier = Modifier.height(56.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
             .fillMaxSize(),
