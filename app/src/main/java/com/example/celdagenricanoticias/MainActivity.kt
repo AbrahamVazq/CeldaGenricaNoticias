@@ -52,16 +52,8 @@ import com.example.celdagenricanoticias.ui.theme.CeldaGenricaNoticiasTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContent {
             CeldaGenricaNoticiasTheme {
-                /*// A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-
-                }*/
                 ViewContainer()
             }
         }
@@ -160,7 +152,6 @@ fun GenericCell(item: ModelExample) {
     }
 }
 
-
 @Preview
 @Composable
 fun InfoView() {
@@ -182,7 +173,6 @@ fun InfoView() {
        }
    }
 }
-
 
 @Preview
 @Composable
@@ -226,7 +216,6 @@ fun GenericCell() {
     }
 }
 
-
 @Preview
 @Composable
 fun FilterCell() {
@@ -235,18 +224,15 @@ fun FilterCell() {
     Column(modifier = Modifier
         .height(56.dp)
         .background(Color.White)) {
-
         Row(verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.fillMaxSize(),
             horizontalArrangement = Arrangement.SpaceBetween) {
-
             Text(
                 text = "(Categoria)",
                 textAlign = Center,
                 modifier = Modifier.padding(start = 16.dp),
                 style = MaterialTheme.typography.titleMedium
             )
-
             Switch(
                 modifier = Modifier.padding(end = 16.dp),
                 checked = isChecked,
@@ -255,7 +241,6 @@ fun FilterCell() {
         }
     }
 }
-
 
 @Preview
 @Composable
@@ -292,11 +277,8 @@ fun FooterTVInfo() {
     }
 }
 
-
-
 @Preview
 @Composable
-
 fun ViewCategoryNew() {
     Column(modifier = Modifier
         .height(68.dp)
