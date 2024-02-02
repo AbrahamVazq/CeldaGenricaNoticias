@@ -2,6 +2,15 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="FilterCell">
+        <State />
+      </entry>
+      <entry key="FooterTVInfo">
+        <State />
+      </entry>
+      <entry key="GenericCell">
+        <State />
+      </entry>
       <entry key="app">
         <State />
       </entry>
