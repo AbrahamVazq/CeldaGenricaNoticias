@@ -85,29 +85,31 @@ fun ViewContainer() {
                 .padding(horizontal = 16.dp)
         ) {
             
-            TopAppBar(title = { Text(text = "Noticias") },
-                actions = {
-                    IconButton(onClick = { /* que hacer cuando le den tap al boton (NAVEGACION PADRINO)*/ }) {
-                        Icon(imageVector = Icons.Default.Settings, contentDescription = "filtro")
-                    }
-                }
-            )
-
+            TopBar()
             ViewCategoryNew()
-            
             Spacer(modifier = Modifier.height(2.dp))
-
             LazyColumn(modifier = Modifier.weight(1f)) {
                 items(arrNews) {
                     news -> GenericCell(item = news)
                     Divider(color = Color.Gray, thickness = 0.5.dp)}
             }
-            
             Spacer(modifier = Modifier.height(5.dp))
-
             FooterTVInfo()
         }
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Preview
+@Composable
+fun TopBar(){
+    TopAppBar(title = { Text(text = "Noticias") },
+        actions = {
+            IconButton(onClick = { /* que hacer cuando le den tap al boton (NAVEGACION PADRINO)*/ }) {
+                Icon(imageVector = Icons.Default.Settings, contentDescription = "filtro")
+            }
+        }
+    )
 }
 
 @Composable
@@ -152,27 +154,6 @@ fun GenericCell(item: ModelExample) {
     }
 }
 
-@Preview
-@Composable
-fun InfoView() {
-
-   Column(modifier = Modifier
-       .height(42.dp)
-       .background(Color.White)) {
-
-       Row(verticalAlignment = Alignment.CenterVertically,
-           modifier = Modifier.fillMaxSize()
-           ){
-
-           Text(
-               text = "Configura el contenido que quieres ver en tu sección de noticias",
-               textAlign = Left,
-               modifier = Modifier.padding(start = 16.dp, end = 16.dp),
-               style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium, fontSize = 14.sp)
-           )
-       }
-   }
-}
 
 @Preview
 @Composable
@@ -216,31 +197,6 @@ fun GenericCell() {
     }
 }
 
-@Preview
-@Composable
-fun FilterCell() {
-    //var isChecked by remember { mutableStateOf(true) }
-    var isChecked = true
-    Column(modifier = Modifier
-        .height(56.dp)
-        .background(Color.White)) {
-        Row(verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.fillMaxSize(),
-            horizontalArrangement = Arrangement.SpaceBetween) {
-            Text(
-                text = "(Categoria)",
-                textAlign = Center,
-                modifier = Modifier.padding(start = 16.dp),
-                style = MaterialTheme.typography.titleMedium
-            )
-            Switch(
-                modifier = Modifier.padding(end = 16.dp),
-                checked = isChecked,
-                onCheckedChange = { isChecked = it }
-            )
-        }
-    }
-}
 
 @Preview
 @Composable
